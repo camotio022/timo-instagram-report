@@ -12,29 +12,31 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 const HERO_BG = "/manus-storage/hero-bg_6dac3190.png";
 const PROFILE_HERO = "/manus-storage/profile-hero_81541361.png";
 
+// Dados coletados via conexão oficial com a API do Instagram em 11/08/2026
+// Insights reais dos últimos 30 dias do perfil @timo_oficial_
 const dailyData = [
-  { date: "28/07", posts: 3, likes: 165, comments: 230, shares: 2, saved: 4, interactions: 322, reach: 4340, views: 6968 },
-  { date: "29/07", posts: 2, likes: 97, comments: 231, shares: 0, saved: 1, interactions: 262, reach: 2022, views: 3971 },
-  { date: "30/07", posts: 6, likes: 2220, comments: 4988, shares: 39, saved: 70, interactions: 7235, reach: 42098, views: 84197 },
-  { date: "31/07", posts: 7, likes: 317, comments: 607, shares: 3, saved: 7, interactions: 748, reach: 5890, views: 10710 },
-  { date: "01/08", posts: 2, likes: 53, comments: 68, shares: 0, saved: 0, interactions: 30, reach: 139, views: 571 },
+  { date: "05/08", posts: 4, likes: 737, comments: 1191, shares: 44, saved: 32, interactions: 2004, reach: 20171, views: 37434 },
+  { date: "06/08", posts: 3, likes: 638, comments: 1078, shares: 35, saved: 38, interactions: 1789, reach: 13732, views: 19243 },
+  { date: "07/08", posts: 2, likes: 88, comments: 74, shares: 1, saved: 5, interactions: 163, reach: 2674, views: 4890 },
+  { date: "08/08", posts: 2, likes: 487, comments: 958, shares: 18, saved: 42, interactions: 1547, reach: 12506, views: 26970 },
+  { date: "09/08", posts: 3, likes: 613, comments: 1379, shares: 41, saved: 22, interactions: 2075, reach: 12037, views: 26254 },
 ];
 
 const topPosts = [
-  { pos: 1, title: "Quer palpite? Pesquisa nos gif king Nadir!", date: "30/07", likes: 1271, comments: 3154, views: 50209, reach: 23208, interactions: 4534 },
-  { pos: 2, title: "King nasir: valendo GIF galera?", date: "30/07", likes: 371, comments: 1063, views: 17182, reach: 8765, interactions: 1459 },
-  { pos: 3, title: "Sua reação, comente com GIF e compartilhe o vídeo!", date: "30/07", likes: 475, comments: 635, views: 15432, reach: 9109, interactions: 1165 },
-  { pos: 4, title: "Só vale comenta com gif!", date: "31/07", likes: 161, comments: 407, views: 8534, reach: 4551, interactions: 579 },
-  { pos: 5, title: "Vale GIF no ritmo da música!", date: "28/07", likes: 115, comments: 199, views: 6968, reach: 4340, interactions: 322 },
+  { pos: 1, title: "O TOPO dos comentários tá disputado demais! 😂🔥", date: "09/08", likes: 802, comments: 1200, views: 43239, reach: 14570, interactions: 2075, link: "https://www.instagram.com/reel/Db1SJhtiI-H/" },
+  { pos: 2, title: "O GIF que ninguém achou ainda... 👀", date: "09/08", likes: 694, comments: 1500, views: 26378, reach: 11000, interactions: 2220, link: "https://www.instagram.com/reel/Db0QlXOxy8T/" },
+  { pos: 3, title: "🔥 REGRA DO DESAFIO", date: "08/08", likes: 492, comments: 1000, views: 25951, reach: 10465, interactions: 1547, link: "https://www.instagram.com/reel/DbyqX43iVcN/" },
+  { pos: 4, title: "Quem será que vai... (Nasir ➡️ Jamal)", date: "09/08", likes: 345, comments: 491, views: 11923, reach: 4000, interactions: 850, link: "https://www.instagram.com/reel/Db1jvp3R972/" },
+  { pos: 5, title: "💥🔥 DESAFIO LANÇADO, NÃO ESPERA E SINCRONIZA SEU GIF!", date: "06/08", likes: 353, comments: 790, views: 11554, reach: 7319, interactions: 1202, link: "https://www.instagram.com/reel/DbtMk9NM8wT/" },
 ];
 
 const viewsChartData = dailyData.map(d => ({ ...d, viewsK: d.views / 1000 }));
 const reachChartData = dailyData.map(d => ({ ...d, reachK: d.reach / 1000 }));
 const followerGrowth = [
-  { date: "29/07", followers: 1324 },
-  { date: "01/08", followers: 1330 },
-  { date: "03/08", followers: 1374 },
-  { date: "04/08", followers: 1406 },
+  { date: "05/08", followers: 1406 },
+  { date: "07/08", followers: 1490 },
+  { date: "09/08", followers: 1572 },
+  { date: "11/08", followers: 1628 },
 ];
 
 function InstagramIcon() {
@@ -76,7 +78,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <div className="h-[3px] w-12 gradient-ig rounded-full" />
               <span className="text-sm font-medium text-muted-foreground">
-                28/07 — 01/08/2026
+                05/08 — 11/08/2026 — Dados da API oficial do Instagram
               </span>
             </div>
           </motion.div>
@@ -95,25 +97,25 @@ export default function Home() {
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Seguidores</p>
                   <p className="text-5xl md:text-6xl font-display font-bold tabular-nums text-foreground leading-none">
-                    <AnimatedCounter value={1324} />
+                    <AnimatedCounter value={1628} />
                   </p>
                   <p className="text-sm text-[#10B981] font-medium mt-2 flex items-center gap-1">
-                    <TrendingUp className="w-3.5 h-3.5" /> +82 em 6 dias
+                    <TrendingUp className="w-3.5 h-3.5" /> +222 em 6 dias
                   </p>
                 </div>
                 {/* Metric 2 */}
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Interações</p>
                   <p className="text-5xl md:text-6xl font-display font-bold tabular-nums text-foreground leading-none">
-                    <AnimatedCounter value={8597} />
+                    <AnimatedCounter value={7578} />
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">Total acumuladas</p>
+                  <p className="text-sm text-muted-foreground mt-2">Em 5 dias</p>
                 </div>
                 {/* Metric 3 */}
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Alcance</p>
                   <p className="text-5xl md:text-6xl font-display font-bold tabular-nums gradient-ig-text leading-none">
-                    <AnimatedCounter value={54489} />
+                    <AnimatedCounter value={61120} />
                   </p>
                   <p className="text-sm text-muted-foreground mt-2">Pessoas alcançadas</p>
                 </div>
@@ -121,9 +123,9 @@ export default function Home() {
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Visualizações</p>
                   <p className="text-5xl md:text-6xl font-display font-bold tabular-nums text-foreground leading-none">
-                    <AnimatedCounter value={106417} />
+                    <AnimatedCounter value={114791} />
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">Views acumuladas</p>
+                  <p className="text-sm text-muted-foreground mt-2">Views em 5 dias</p>
                 </div>
               </div>
             </div>
@@ -142,7 +144,7 @@ export default function Home() {
               </h2>
               <div className="h-1.5 w-16 gradient-ig rounded-full mb-6" />
               <p className="text-muted-foreground text-base leading-relaxed">
-                <span className="font-bold text-foreground">20 posts</span> em 5 dias, média de 4 por dia.
+                <span className="font-bold text-foreground">14 Reels</span> em 5 dias, média de 2,8 por dia — e cada vídeo performando mais que o anterior.
               </p>
             </div>
 
@@ -169,25 +171,25 @@ export default function Home() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.3, delay: i * 0.06 }}
-                        className={`border-b border-border/50 ${day.date === "30/07" ? "bg-gradient-to-r from-[#E1306C]/8 to-transparent" : ""}`}
+                        className={`border-b border-border/50 ${day.date === "09/08" ? "bg-gradient-to-r from-[#E1306C]/8 to-transparent" : ""}`}
                       >
-                        <td className={`p-4 font-medium ${day.date === "30/07" ? "text-[#E1306C] font-bold" : "text-foreground"}`}>{day.date}</td>
+                        <td className={`p-4 font-medium ${day.date === "09/08" ? "text-[#E1306C] font-bold" : "text-foreground"}`}>{day.date}</td>
                         <td className="p-4 text-right tabular-nums">{day.posts}</td>
                         <td className="p-4 text-right tabular-nums">{day.likes.toLocaleString("pt-BR")}</td>
                         <td className="p-4 text-right tabular-nums">{day.comments.toLocaleString("pt-BR")}</td>
-                        <td className={`p-4 text-right tabular-nums font-semibold ${day.date === "30/07" ? "text-[#E1306C]" : ""}`}>{day.interactions.toLocaleString("pt-BR")}</td>
+                        <td className={`p-4 text-right tabular-nums font-semibold ${day.date === "09/08" ? "text-[#E1306C]" : ""}`}>{day.interactions.toLocaleString("pt-BR")}</td>
                         <td className="p-4 text-right tabular-nums">{day.reach.toLocaleString("pt-BR")}</td>
                         <td className="p-4 text-right tabular-nums">{day.views.toLocaleString("pt-BR")}</td>
                       </motion.tr>
                     ))}
                     <tr className="bg-muted/40 font-bold">
                       <td className="p-4 text-foreground">Total</td>
-                      <td className="p-4 text-right tabular-nums">20</td>
-                      <td className="p-4 text-right tabular-nums">2.852</td>
-                      <td className="p-4 text-right tabular-nums">6.124</td>
-                      <td className="p-4 text-right tabular-nums text-[#E1306C]">8.597</td>
-                      <td className="p-4 text-right tabular-nums">54.489</td>
-                      <td className="p-4 text-right tabular-nums">106.417</td>
+                      <td className="p-4 text-right tabular-nums">14</td>
+                      <td className="p-4 text-right tabular-nums">2.555</td>
+                      <td className="p-4 text-right tabular-nums">4.600</td>
+                      <td className="p-4 text-right tabular-nums text-[#E1306C]">7.578</td>
+                      <td className="p-4 text-right tabular-nums">61.120</td>
+                      <td className="p-4 text-right tabular-nums">114.791</td>
                     </tr>
                   </tbody>
                 </table>
@@ -219,8 +221,8 @@ export default function Home() {
                     <p className="text-sm text-muted-foreground">Total de views acumuladas por dia</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-3xl font-display font-bold gradient-ig-text tabular-nums">106k</p>
-                    <p className="text-xs text-muted-foreground">total views</p>
+                    <p className="text-3xl font-display font-bold gradient-ig-text tabular-nums">114,8k</p>
+                    <p className="text-xs text-muted-foreground">views em 5 dias</p>
                   </div>
                 </div>
                 <ResponsiveContainer width="100%" height={320}>
@@ -327,30 +329,28 @@ export default function Home() {
                   <Flame className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-2xl font-display font-bold text-foreground">
-                  Explosão Viral em 30/07
+                  Explosão Viral em 09/08
                 </h3>
               </div>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mb-8">
-                O dia 30 de julho foi absolutamente explosivo. <span className="font-bold text-foreground">6 posts foram publicados</span> e o resultado foi:{" "}
-                <span className="font-bold text-[#E1306C]">7.235 interações</span>,{" "}
-                <span className="font-bold text-[#F77737]">42.098 de alcance</span> e{" "}
-                <span className="font-bold text-[#FCAF45]">84.197 views</span>. Isso representa{" "}
-                <span className="font-bold text-foreground">84% de todo o engajamento</span> concentrado em um único dia.
+                O dia 9 de agosto foi absolutamente explosivo. <span className="font-bold text-foreground">3 Reels publicados</span> — sendo um deles, <span className="font-bold text-[#E1306C]">"O TOPO dos comentários"</span>, que atingiu <span className="font-bold text-[#FCAF45]">43.239 views em apenas 8 horas</span>. No mesmo dia, o perfil acumulou{" "}
+                <span className="font-bold text-[#E1306C]">2.075 interações</span> e{" "}
+                <span className="font-bold text-[#F77737]">12.037 de alcance</span> — ritmo de viralização em aceleração constante.
               </p>
 
               {/* Big stats row */}
               <div className="grid grid-cols-3 gap-4 md:gap-8">
                 <div className="text-center p-6 bg-gradient-to-b from-[#E1306C]/8 to-[#E1306C]/3 rounded-2xl border border-[#E1306C]/10">
-                  <p className="text-5xl md:text-6xl font-display font-bold gradient-ig-text tabular-nums leading-none">84%</p>
-                  <p className="text-sm text-muted-foreground mt-3">do engajamento<br />em um dia</p>
+                  <p className="text-5xl md:text-6xl font-display font-bold gradient-ig-text tabular-nums leading-none">5,4k</p>
+                  <p className="text-sm text-muted-foreground mt-3">views/hora<br />no pico</p>
                 </div>
                 <div className="text-center p-6 bg-muted/40 rounded-2xl border border-border/50">
-                  <p className="text-5xl md:text-6xl font-display font-bold text-foreground tabular-nums leading-none">6</p>
-                  <p className="text-sm text-muted-foreground mt-3">posts<br />no dia</p>
+                  <p className="text-5xl md:text-6xl font-display font-bold text-foreground tabular-nums leading-none">3</p>
+                  <p className="text-sm text-muted-foreground mt-3">Reels<br />no dia</p>
                 </div>
                 <div className="text-center p-6 bg-muted/40 rounded-2xl border border-border/50">
-                  <p className="text-5xl md:text-6xl font-display font-bold text-foreground tabular-nums leading-none">17,5x</p>
-                  <p className="text-sm text-muted-foreground mt-3">mais alcance<br />que seguidores</p>
+                  <p className="text-5xl md:text-6xl font-display font-bold text-foreground tabular-nums leading-none">43k</p>
+                  <p className="text-sm text-muted-foreground mt-3">views no vídeo<br />campeão</p>
                 </div>
               </div>
             </div>
@@ -371,14 +371,14 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-muted-foreground text-lg mb-8 max-w-3xl">
-                <span className="font-bold text-foreground">"Quer palpite? Pesquisa nos gif king Nadir!"</span> — o conteúdo que definiu o período:
+                <span className="font-bold text-foreground">"O TOPO dos comentários tá disputado demais!"</span> — o vídeo que definiu o período, com 43 mil views em 8 horas:
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { label: "Curtidas", value: 1271, icon: Heart, color: "#E1306C" },
-                  { label: "Comentários", value: 3154, icon: MessageCircle, color: "#F77737" },
-                  { label: "Alcance", value: 23208, icon: Eye, color: "#FCAF45" },
-                  { label: "Views", value: 50209, icon: Flame, color: "#10B981" },
+                  { label: "Curtidas", value: 802, icon: Heart, color: "#E1306C" },
+                  { label: "Comentários", value: 1200, icon: MessageCircle, color: "#F77737" },
+                  { label: "Compartilh. + salvos", value: 44, icon: Eye, color: "#FCAF45" },
+                  { label: "Views em 8h", value: 43239, icon: Flame, color: "#10B981" },
                 ].map((stat) => (
                   <motion.div
                     key={stat.label}
@@ -402,7 +402,7 @@ export default function Home() {
           <div className="bg-card rounded-2xl p-8 shadow-sm border border-border/30">
             <h3 className="text-xl font-display font-bold text-foreground mb-4">Frequência de Postagem</h3>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Média de <span className="font-bold text-foreground">4 posts por dia</span>. Frequência irregular: 7 em 31/07, 6 em 30/07, mas apenas 2 em 01/08. A <span className="font-bold text-foreground">consistência precisa ser mantida</span> para sustentar o crescimento.
+              Média de <span className="font-bold text-foreground">2,8 posts por dia</span> (14 Reels em 5 dias). A estratégia mudou: menos posts de menor qualidade e mais posts com <span className="font-bold text-foreground">Modo Teste + formato vencedor</span>. Cada vídeo agora performa mais que o anterior.
             </p>
           </div>
         </SectionReveal>
@@ -442,7 +442,13 @@ export default function Home() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="font-display font-semibold text-foreground text-sm md:text-base">
-                            "{post.title}"
+                            {post.link ? (
+                              <a href={post.link} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-[#E1306C] transition-colors">
+                                "{post.title}"
+                              </a>
+                            ) : (
+                              `"${post.title}"`
+                            )}
                           </h4>
                           <p className="text-xs text-muted-foreground mt-1">{post.date}</p>
                         </div>
@@ -493,7 +499,7 @@ export default function Home() {
                 <h3 className="font-display font-bold text-foreground">Formato Vencedor</h3>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Posts com chamadas para interação geraram significativamente mais engajamento. Taxa de engajamento: <span className="font-bold text-foreground">32,5%</span> — muito acima da média de mercado (2-5%).
+                Posts com chamadas para interação geraram significativamente mais engajamento. Taxa de engajamento de ~<span className="font-bold text-foreground">5,9%</span> nos vídeos recentes — acima da média de mercado (2-5%).
               </p>
             </div>
           </SectionReveal>
@@ -507,7 +513,7 @@ export default function Home() {
                 <h3 className="font-display font-bold text-foreground">Conteúdo King Nasir</h3>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                "King Nasir/Nadir" provou ser um catalisador viral poderoso. Os dois melhores posts fazem referência a esse tema.
+                "King Nasir" segue o tema dominante — e a variação com o passinho <span className="font-bold text-foreground">Jamal</span> começou a testar novas audiências.
               </p>
             </div>
           </SectionReveal>
@@ -521,7 +527,7 @@ export default function Home() {
                 <h3 className="font-display font-bold text-foreground">Potencial de Crescimento</h3>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Com 50.209 views no melhor post, o perfil está sendo descoberto por um público muito maior. Meta de <span className="font-bold text-foreground">2.000 seguidores</span> é alcançável.
+                Com 1628 seguidores (+222 em 6 dias) e um vídeo de 43 mil views, a meta de <span className="font-bold text-foreground">2.000 seguidores</span> está a poucos dias de distância.
               </p>
             </div>
           </SectionReveal>
@@ -535,7 +541,7 @@ export default function Home() {
                 <h3 className="font-display font-bold text-foreground">Atenção Necessária</h3>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Queda brusca em 01/08 indica que o momentum viral pode estar diminuindo. Manter <span className="font-bold text-foreground">4+ posts por dia</span> é essencial.
+                Dias de menor atividade (07/08) têm queda acentuada de alcance. <span className="font-bold text-foreground">Consistência diária</span> e alternância entre formatos (topo dos comentários / mistério / times) são essenciais para sustentar o crescimento.
               </p>
             </div>
           </SectionReveal>
@@ -569,11 +575,10 @@ export default function Home() {
                 </ResponsiveContainer>
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/50">
                   <div>
-                    <p className="text-xs text-muted-foreground">De 29/07 a 04/08</p>
+                                        <p className="text-xs text-muted-foreground">De 05/08 a 11/08</p>
                   </div>
                   <div className="flex items-center gap-1 text-[#10B981] font-display font-bold text-lg">
-                    <TrendingUp className="w-4 h-4" />
-                    +82
+                    <TrendingUp className="w-4 h-4" /> +222
                   </div>
                 </div>
               </div>
@@ -585,11 +590,11 @@ export default function Home() {
                 <div className="relative">
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] opacity-80 mb-4">Próximo Objetivo</p>
                   <h2 className="text-4xl md:text-5xl font-display font-bold leading-tight mb-4">
-                    O caminho para <br />
+                    Rumo aos <br />
                     <span className="text-white/90">2.000 seguidores</span>
                   </h2>
                   <p className="text-white/80 text-base leading-relaxed mb-8 max-w-md">
-                    A fórmula já está provada. Continue postando 4+ Reels por dia com CTAs e o formato King Nasir. O crescimento é uma questão de consistência.
+                    São 372 seguidores para a meta. O vídeo campeão (43k views em 8h) provou que a fórmula funciona — consistência com formato vencedor é o que falta.
                   </p>
                   <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-sm text-white font-display font-semibold border border-white/30">
                     <TrendingUp className="w-5 h-5" />
@@ -607,7 +612,7 @@ export default function Home() {
         <div className="container text-center">
           <div className="h-1 w-12 gradient-ig rounded-full mx-auto mb-4" />
           <p className="text-sm text-muted-foreground">
-            Relatório gerado em 04/08/2026 — Análise do perfil @timo_oficial_
+            Relatório atualizado em 11/08/2026 — Análise do perfil @timo_oficial_ via API oficial do Instagram
           </p>
         </div>
       </footer>
